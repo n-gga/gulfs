@@ -1,158 +1,80 @@
-<doctype html="">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gulfstream</title>
-  <link href="remixicon.css" rel="stylesheet">
-  
-  
-  <link href="css2.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-weight: lighter;
-      background-color: #111114;
-      color: rgb(200,200,200)
-    }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
 
-    img {
-      width: 64px;
-      height: 64px;
-      border-radius: 15px;
-    }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
 
-    .link {
-      color: #8c80ff !important;
-      text-decoration: none;
-    }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-    .team {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-    }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
 
-    .box {
-      background-color: #272730;
-      
-      border-radius: 10px;
-      margin: 15px;
-      padding: 20px;
-      text-align: center;
-    }
+    <h2>Email Form</h2>
 
-    .users_temp {
-      margin: 15px;
-      background-color: #1e1e24;
-      border-radius: 10px;
-      width: 80%;
-      text-align: center;
-    }
+    <form id="emailForm">
+        <label for="senderName">Your Name:</label>
+        <input type="text" id="senderName" name="senderName" required>
 
-    .header {
-      margin: 30px;
-      font-size: xx-large;
-      font-weight: bold;
-    }
+        <label for="senderEmail">Your Email:</label>
+        <input type="email" id="senderEmail" name="senderEmail" required>
 
-    .box h3 {
-      
-      margin-top: 10px;
-      font-size: 28px;
-    }
+        <label for="targetEmail">Recipient's Email:</label>
+        <input type="email" id="targetEmail" name="targetEmail" required>
 
-    .box h5 {
-      color: #888;
-      font-size: 20px;
-      margin-top: 5px;
-    }
- 
-  </style>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
 
+        <label for="content">Message:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
 
-  <section class="team">
-    <div class="users_temp">
-      <h1 class="header">Gulfstream.lol</h1>
-      <div class="team-content">
-        <div class="users">
-          <div class="box"> <b>Goat</b>
-          
-          </div>
-         
-              <img src="sussy.png">
-              <h3>El Sussy</h3>
-              <h5> Creator of Gulfstream and major capitalist <a href="https://twitter.com/bitcoinluv" class="link">Twitter</a></h5>
+        <button type="button" onclick="sendEmail()">Send Email</button>
+    </form>
 
-          
-       <div class="box"> <b>Bosses</b>
-          
-          </div>
-          
-          <div class="box">
-          <img src="paranoid.png">
-            <h3>Paranoid</h3>
-            <h5>real boss OG Gulfstream member</h5>
-          </div>
-          
-       <div class="box">
-            <img src="otg.png">
-            <h3>OTG</h3>
-            <h5>real british boss man "at the end of the day its not that funny is it." OG Gulfstreamer</h5>
-          </div>
-          
-             <div class="box">
-            <img src="light.png">
-            <h3>Light</h3>
-            <h5>best ghost writer</h5>
-          </div>
-          
-          
-          
-          <div class="box">
-            <img src="jay.png">
-            <h3>Jay</h3>
-            <h5>REAL BOSS NIGGA OG GULFSTREAMER</h5>
-          </div>
+    <script>
+        function sendEmail() {
+            // You would typically send the form data to a server-side script for email processing.
+            // For the sake of this example, we'll just display an alert with the form data.
+            var senderName = document.getElementById('senderName').value;
+            var senderEmail = document.getElementById('senderEmail').value;
+            var targetEmail = document.getElementById('targetEmail').value;
+            var subject = document.getElementById('subject').value;
+            var content = document.getElementById('content').value;
 
-          <div class="box">
-            <img src="SL.png">
-            <h3>SL</h3>
-            <h5>retarded black kid begs for depos but a G</h5>
-          </div>
+            var message = `Sender Name: ${senderName}\nSender Email: ${senderEmail}\nRecipient's Email: ${targetEmail}\nSubject: ${subject}\nMessage: ${content}`;
 
-          <div class="box">
-            <h3>r</h3>
-            <h5><a href="https://t.me/tokenlogger" class="link">RDP OPSEC OPSEC 😎</a></h5>
-          </div>
-          
-          
-        <div class="box"> <b>HALL OF RETARDED FAGGOTS</b>
-          </div>
-          
-          <div class="box">
-            <img src="tl.png">
-            <h3>TL</h3>
-            <h5>fat aussie retard who sends cp claims hes worth 10 figs LOL</h5>
-          </div>
-         
-        <div class="box">
-          <iframe width="100%" height="200" scrolling="no" frameborder="yes" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1681751106&color=%23090909&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/cookievendor" title="2fa" target="_blank" style="color: #cccccc; text-decoration: none;">2fa</a> · <a href="https://soundcloud.com/cookievendor/sets/gulf" title="gulf" target="_blank" style="color: #cccccc; text-decoration: none;">gulf</a></div>
-        </div>
-          
-    <div class="box">
-              <h3><a href="https://discord.gg/BBy3TNXB4t" class="link">Join the Discord</a></h3>
-              
-      </div>
+            // In a real-world scenario, you would send this data to the server using AJAX or a form submission.
+            // For now, we'll just display the data in an alert.
+            alert(message);
+        }
+    </script>
 
-
-
-  </div></div></div></section>
-
-</doctype></body></html>
+</body>
+</html>
